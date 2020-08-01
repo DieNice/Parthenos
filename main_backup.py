@@ -16,7 +16,7 @@ else:
 if not os.path.exists(today):
     os.mkdir(today)
     print("directory created successfully", today)
-target_name = today + os.sep + now + '.zip'
+
 zip_command = "zip -qr {0} {1}".format(target_name, ' '.join(source))
 if os.system(zip_command) == 0:
     print("Copy is sucсessfully created", target_name)
