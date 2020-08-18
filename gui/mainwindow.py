@@ -48,15 +48,15 @@ class Ui_MainWindow(object):
         self.verticalLayout.addLayout(self.gridLayout)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.listWidget = QtWidgets.QListWidget(self.verticalLayoutWidget)
-        self.listWidget.setObjectName("listWidget")
-        self.horizontalLayout.addWidget(self.listWidget)
-        self.add_to_index = QtWidgets.QPushButton(self.verticalLayoutWidget)
-        self.add_to_index.setObjectName("add_to_index")
-        self.horizontalLayout.addWidget(self.add_to_index)
         self.treeView = QtWidgets.QTreeView(self.verticalLayoutWidget)
         self.treeView.setObjectName("treeView")
         self.horizontalLayout.addWidget(self.treeView)
+        self.add_to_index = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.add_to_index.setObjectName("add_to_index")
+        self.horizontalLayout.addWidget(self.add_to_index)
+        self.listWidget = QtWidgets.QListWidget(self.verticalLayoutWidget)
+        self.listWidget.setObjectName("listWidget")
+        self.horizontalLayout.addWidget(self.listWidget)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QtWidgets.QWidget()
@@ -203,4 +203,6 @@ class Ui_MainWindow(object):
         self.actionextract.setShortcut(_translate("MainWindow", "Ctrl+Z"))
         self.actionsend.setText(_translate("MainWindow", "send"))
         self.actionsend.setToolTip(_translate("MainWindow", "<html><head/><body><p>Send</p></body></html>"))
+
+
 import gui.res_rc
