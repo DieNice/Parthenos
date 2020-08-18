@@ -203,4 +203,4 @@ class Ui_MainWindow(object):
         self.actionextract.setShortcut(_translate("MainWindow", "Ctrl+Z"))
         self.actionsend.setText(_translate("MainWindow", "send"))
         self.actionsend.setToolTip(_translate("MainWindow", "<html><head/><body><p>Send</p></body></html>"))
-import icons
+import gui.res_rc
