@@ -48,14 +48,21 @@
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <layout class="QGridLayout" name="gridLayout">
-         <item row="0" column="0">
-          <widget class="QPushButton" name="pushButton">
+         <item row="0" column="1">
+          <widget class="QPushButton" name="add_files">
            <property name="text">
-            <string>Open...</string>
+            <string>add files</string>
            </property>
           </widget>
          </item>
-         <item row="0" column="1">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="add_dir">
+           <property name="text">
+            <string>add directory</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
           <spacer name="horizontalSpacer">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -71,14 +78,7 @@
            </property>
           </spacer>
          </item>
-         <item row="1" column="0">
-          <widget class="QPushButton" name="pushButton_3">
-           <property name="text">
-            <string>Go to Archiving files</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
+         <item row="4" column="3">
           <spacer name="horizontalSpacer_2">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -91,6 +91,13 @@
            </property>
           </spacer>
          </item>
+         <item row="4" column="1">
+          <widget class="QPushButton" name="goto_archive">
+           <property name="text">
+            <string>Go to Archiving files</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
        <item>
@@ -99,9 +106,9 @@
           <widget class="QListWidget" name="listWidget"/>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="add_to_index">
            <property name="text">
-            <string>-&gt;</string>
+            <string>add to index</string>
            </property>
           </widget>
          </item>
@@ -156,12 +163,12 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>30</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>File</string>
+     <string>F&amp;ile</string>
     </property>
     <addaction name="actionOpen"/>
     <addaction name="actionClose"/>
@@ -173,22 +180,22 @@
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
-     <string>Commands</string>
+     <string>&amp;Commands</string>
     </property>
    </widget>
    <widget class="QMenu" name="menuOperations">
     <property name="title">
-     <string>Operations</string>
+     <string>Oper&amp;ations</string>
     </property>
    </widget>
    <widget class="QMenu" name="menuParameters">
     <property name="title">
-     <string>Parameters</string>
+     <string>&amp;Parameters</string>
     </property>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
-     <string>Help</string>
+     <string>He&amp;lp</string>
     </property>
     <addaction name="actionFind_Action"/>
     <addaction name="actionHelp"/>
@@ -223,72 +230,72 @@
   </widget>
   <action name="actionOpen">
    <property name="text">
-    <string>New pickling...</string>
+    <string>&amp;New pickling...</string>
    </property>
   </action>
   <action name="actionClose">
    <property name="text">
-    <string>Open pickling...</string>
+    <string>&amp;Open pickling...</string>
    </property>
   </action>
   <action name="actionFind_Action">
    <property name="text">
-    <string>Find Action</string>
+    <string>&amp;Find Action</string>
    </property>
   </action>
   <action name="actionHelp">
    <property name="text">
-    <string>Help</string>
+    <string>&amp;Help</string>
    </property>
   </action>
   <action name="actionGetting_started">
    <property name="text">
-    <string>Getting started</string>
+    <string>&amp;Getting started</string>
    </property>
   </action>
   <action name="actionKeymap_referance">
    <property name="text">
-    <string>Keymap reference</string>
+    <string>&amp;Keymap reference</string>
    </property>
   </action>
   <action name="actionRegistre">
    <property name="text">
-    <string>Registre</string>
+    <string>&amp;Registre</string>
    </property>
   </action>
   <action name="actionCheck_for_updates">
    <property name="text">
-    <string>Check for updates</string>
+    <string>&amp;Check for updates</string>
    </property>
   </action>
   <action name="actionabout">
    <property name="text">
-    <string>about</string>
+    <string>&amp;about</string>
    </property>
   </action>
   <action name="actionSave_As">
    <property name="text">
-    <string>Save As</string>
+    <string>&amp;Save As</string>
    </property>
   </action>
   <action name="actionClose_pickling">
    <property name="text">
-    <string>Close pickling</string>
+    <string>&amp;Close pickling</string>
    </property>
   </action>
   <action name="actionSettings">
    <property name="text">
-    <string>Settings</string>
+    <string>Sett&amp;ings</string>
    </property>
   </action>
   <action name="actionPrint">
    <property name="text">
-    <string>Print</string>
+    <string>&amp;Print</string>
    </property>
   </action>
   <action name="actionExit">
    <property name="text">
-    <string>Exit</string>
+    <string>&amp;Exit</string>
    </property>
   </action>
   <action name="actionAdd">

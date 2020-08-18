@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets
 import sys
 
-from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtWidgets import QFileDialog, QListView
 
 from gui.mainwindow import Ui_MainWindow
 
@@ -11,13 +11,23 @@ class MainWindow(QtWidgets.QMainWindow):
         super(MainWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.pushButton.clicked.connect(self.ShowDialogFiles)
+        self.ui.add_dir.clicked.connect(self.adding_dir)
+        self.ui.add_files.clicked.connect(self.adding_files)
 
-    def ShowDialogFiles(self):
+    def adding_dir(self):
         dialog = QFileDialog(self)
         dialog.setFileMode(QFileDialog.Directory)
-        dialog.setNameFilter("All files (*)")
-        dialog.setViewMode(QFileDialog.Detail)
+        dialog.setViewMode(QFileDialog.List)
+
+        if dialog.exec_():
+            fileNames = dialog.selectedFiles()
+        for i in fileNames:
+            self.ui.listWidget.addItem(i)
+
+    def adding_files(self):
+        dialog = QFileDialog(self)
+        dialog.setFileMode(QFileDialog.ExistingFiles)
+        dialog.setViewMode(QFileDialog.List)
         if dialog.exec_():
             fileNames = dialog.selectedFiles()
         for i in fileNames:
