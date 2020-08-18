@@ -13,6 +13,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
         self.ui.add_dir.clicked.connect(self.adding_dir)
         self.ui.add_files.clicked.connect(self.adding_files)
+        self.ui.actionAdd.triggered.connect(self.adding_files)
 
     def adding_dir(self):
         dialog = QFileDialog(self)
