@@ -19,9 +19,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.actionAdd.triggered.connect(self.adding_files)
         self.ui.treeView.clicked.connect(self.treeViewClicked)
 
+        #initialization treeView drivers
         sPath = "home/"
         drivesModel = QFileSystemModel(self)
-        drivesModel.setFilter(QDir.NoDotAndDotDot | QDir.Dirs)
+        # drivesModel.setFilter(QDir.NoDotAndDotDot | QDir.Dirs)
         drivesModel.setRootPath(sPath)
         self.ui.treeView.setModel(drivesModel)
         self.ui.treeView.hideColumn(1)
@@ -29,7 +30,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.treeView.hideColumn(3)
 
         filesModel = QFileSystemModel(self)
-        filesModel.setFilter(QDir.NoDotAndDotDot | QDir.Files)
+        # filesModel.setFilter(QDir.NoDotAndDotDot | QDir.Files)
         filesModel.setRootPath(sPath)
         self.ui.treeView.setModel(filesModel)
 
