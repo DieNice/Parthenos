@@ -2,7 +2,7 @@ from PyQt5 import QtWidgets
 import sys
 
 from PyQt5.QtCore import QDir, QModelIndex
-from PyQt5.QtWidgets import QFileDialog, QFileSystemModel
+from PyQt5.QtWidgets import QFileDialog, QFileSystemModel, QListWidgetItem
 
 from gui.mainwindow import Ui_MainWindow
 
@@ -17,22 +17,22 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.add_dir.clicked.connect(self.adding_dir)
         self.ui.add_files.clicked.connect(self.adding_files)
         self.ui.actionAdd.triggered.connect(self.adding_files)
-        self.ui.treeView.clicked.connect(self.treeViewClicked)
 
-        #initialization treeView drivers
-        sPath = "home/"
-        drivesModel = QFileSystemModel(self)
+        # initialization treeView drivers
+        sPath = "/home"
         # drivesModel.setFilter(QDir.NoDotAndDotDot | QDir.Dirs)
-        drivesModel.setRootPath(sPath)
-        self.ui.treeView.setModel(drivesModel)
+        self.__drivesModel.setRootPath(sPath)
+        self.ui.treeView.setModel(self.__drivesModel)
         self.ui.treeView.hideColumn(1)
         self.ui.treeView.hideColumn(2)
         self.ui.treeView.hideColumn(3)
 
-        filesModel = QFileSystemModel(self)
         # filesModel.setFilter(QDir.NoDotAndDotDot | QDir.Files)
-        filesModel.setRootPath(sPath)
-        self.ui.treeView.setModel(filesModel)
+        self.__filesModel.setRootPath(sPath)
+        self.ui.treeView.setModel(self.__filesModel)
+
+        self.ui.treeView.clicked.connect(self.treeViewClicked)
+        self.ui.add_to_index.clicked.connect(self.addingIndex)
 
     def adding_dir(self):
         dialog = QFileDialog(self)
@@ -54,12 +54,19 @@ class MainWindow(QtWidgets.QMainWindow):
             self.ui.listWidget.addItem(i)
 
     def treeViewClicked(self, index):
-        sPath = self.__drivesModel.fileInfo(index).absolutePath()
-        self.ui.treeView.setRootIndex(self.__filesModel.setRootPath(sPath))
+        # sPath = self.__drivesModel.fileInfo(index).absolutePath()
+        # self.ui.treeView.setRootIndex(self.__filesModel.setRootPath(sPath))
+        pass
+
+    def addingIndex(self):
+
+        selecteditem = self.ui.treeView.currentIndex()
+        mystr = self.__filesModel.filePath(selecteditem)
+        self.ui.textEdit.setText(mystr)
+        self.ui.listWidget.addItem(mystr)
 
 
 app = QtWidgets.QApplication([])
 application = MainWindow()
 application.show()
-
 sys.exit(app.exec())
